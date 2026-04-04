@@ -1,60 +1,96 @@
-# Consumer Pattern Transition Analysis
+# 소비 패턴 전이 분석
 
-## Overview
-This project analyzes quarterly card sales data to identify **consumer pattern transitions** and examine whether such transitions can be interpreted as an early signal of future commercial risk.
+## 개요
 
-The analysis was conducted using SQL, Python, and R, with a focus on:
-- transition detection,
-- cohort and retention structure,
-- statistical testing,
-- and predictive modeling.
+이 프로젝트는 서울 상권 카드 매출 데이터를 활용하여  
+소비 패턴의 변화(전이)가 향후 사업 위험의 조기 신호로 해석될 수 있는지를 분석한 프로젝트입니다.
 
-## Project Goal
-The main goal of this project is to test whether changes in consumption patterns can be used as a leading indicator of future business instability.
+---
 
-## Data
-- Source: Seoul Open Data Plaza
-- Data type: Quarterly card sales / commercial district-level data
-- Unit of analysis: commercial district × quarter
+## 프로젝트 목적
 
-## Workflow
+- 시간대별 매출 비중을 기반으로 소비 구조를 정의
+- 유사한 소비 패턴을 군집화하여 유형화
+- 분기 간 군집 전이 여부를 탐지
+- 전이 발생이 다음 분기 위험과 관련이 있는지 검증
+- 분석 결과를 포트폴리오 형태로 정리
 
-### 1. SQL
-Used for:
-- raw table creation
-- panel data construction
-- time-share feature generation
-- peak shift definition
-- cohort / transition table generation
+---
 
-📁 File: `sql/01_data_pipeline.sql`
+## 데이터
 
-### 2. Python
-Used for:
-- train dataset preparation
-- feature selection
-- logistic regression modeling
-- model evaluation (ROC-AUC, PR-AUC, confusion matrix)
+- 출처: 서울 열린데이터광장 카드 매출 분기 데이터
+- 분석 단위: 상권 × 업종 × 분기
 
-📁 File: `python/02_modeling.py`
+---
 
-### 3. R
-Used for:
-- preprocessing for hypothesis testing
-- summary statistics
-- Mann–Whitney U test comparing shift vs non-shift groups
+## 분석 흐름
 
-📁 File: `r/03_statistical_test.R`
+1. SQL을 이용해 분석용 테이블 및 파생 변수 생성
+2. Python을 이용해 모델링 및 소비 패턴 전이 분석 수행
+3. R을 이용해 통계 검정 수행
+4. 결과를 발표용 PDF로 정리
 
-## Key Idea
-If a commercial district’s consumer pattern changes significantly from one quarter to the next, that transition may serve as an **early warning signal** for elevated future risk.
+---
 
-## Outputs
-- Portfolio presentation PDF
-- model / cohort / transition analysis code
+## 파일 구성
 
-📁 Output folder: `outputs/`
+### SQL
+`sql/01_data_pipeline.sql`
 
-## Notes
-This repository is organized for portfolio presentation purposes.  
-Some file paths in the scripts are preserved from the original local analysis environment.
+**주요 역할**
+- 원천 테이블 구성
+- 시간대 비중 변수 생성
+- 피크 패턴 및 전이 변수 정의
+- 학습 데이터셋 생성
+- 코호트 / 전이행렬 / 유지율 요약 테이블 생성
+- 발표용 지표 산출
+
+---
+
+### Python
+`python/02_modeling.py`
+
+**주요 역할**
+- 분석용 데이터 로드 및 전처리
+- 로지스틱 회귀 기반 위험 분석
+- 시간대 소비 패턴 군집 생성
+- 군집 전이 탐지
+- 전이 결과와 위험 변수 결합
+- 코호트 분석 결과 및 시각화 생성
+
+---
+
+### R
+`r/03_statistical_test.R`
+
+**주요 역할**
+- 전이 상세 데이터 로드
+- 비교용 변수 전처리
+- 그룹별 요약 통계 산출
+- Mann–Whitney U test 수행
+- 검정 통계량 및 결과 출력
+
+---
+
+### 결과물
+`outputs/포트폴리오3.pdf`
+
+본 파일은 프로젝트 결과를 정리한 발표용 PDF입니다.
+
+---
+
+## 핵심 결과
+
+- 소비 패턴 전이가 발생한 경우, 다음 분기 위험과의 관련성이 확인되었습니다.
+- 발표 자료 기준으로 전이 발생 시 위험은 약 1.8배 증가하는 것으로 정리되었습니다.
+- 소비 구조는 크게 3가지 유형으로 구분되었습니다.
+- 전이는 균등하게 발생하지 않고 특정 방향성을 보였습니다.
+
+---
+
+## 참고 사항
+
+- 포트폴리오용 정리를 위해 주석과 구조만 보완했습니다.
+- 일부 코드에는 원래 작업 환경의 로컬 절대경로가 포함되어 있을 수 있습니다.
+- 본 저장소 버전은 재현성보다는 포트폴리오 제시에 초점을 두고 있습니다.
