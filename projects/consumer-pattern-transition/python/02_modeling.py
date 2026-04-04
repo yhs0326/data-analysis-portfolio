@@ -38,7 +38,7 @@ assert data['pk_shift'].isna().sum() == 0, "Target NA exists"
 # ============================================================
 # 2. Walk-forward 평가 (운영 시뮬레이션)
 # ============================================================
-###### Walk-forward 평가 (운영 시뮬레이션) #######SS
+###### Walk-forward 평가 (운영 시뮬레이션) #######
 data["yq"] = data["yq"].astype(int)
 
 # yq 순서
@@ -102,7 +102,7 @@ print("\n[Walk-forward 표준편차(안정성)]")
 print(wf[["roc_auc","pr_auc"]].std().to_string())
 
 #  이후 군집분석/코호트 단계에서 train/test를 쓰고 있었으니,
-#    아래에서 사용할 수 있게 'cut'을 하나 정해 두자(예: 마지막 평가분기 직전까지 train)
+#  아래에서 사용할 수 있게 'cut'을 하나 정해 두기
 cut_yq = yqs[-2]  # 마지막 분기는 next가 없어 레이블/유지율이 끊길 수 있어서 -2 
 train = data[data["yq"] <= cut_yq].copy()
 test  = data[data["yq"] >  cut_yq].copy()
@@ -250,7 +250,7 @@ train2.groupby("cl_cluster_shift")["pk_shift"].mean()
 test2.groupby("cl_cluster_shift")["pk_shift"].mean()
 
 # 1) 군집별 업종(코드+명) 출현 빈도
-#    (detail은 분기별 행이므로, 같은 업종이 여러 분기/여러 상권에서 반복 등장 가능)
+# (detail은 분기별 행이므로, 같은 업종이 여러 분기/여러 상권에서 반복 등장 가능)
 need_name_cols = ["서비스_업종_코드", "서비스_업종_코드_명"]
 missing_name_cols = [c for c in need_name_cols if c not in detail.columns]
 if missing_name_cols:
@@ -318,7 +318,7 @@ cluster_size = (
     .to_frame()
 )
 
-# 2) 군집별 평균 패턴(너가 이미 봤던 핵심)
+# 2) 군집별 평균 패턴
 cluster_mean = detail.groupby("cl_cluster_id")[X_cols].mean()
 
 # 3) 군집별 '주요 시간대' 확인: 평균이 가장 큰 시간대(0~6, 6~11, ...)
@@ -351,8 +351,7 @@ cluster_profile_summary = (
     .join(cluster_peak_share)
     .join(cluster_weekend)
     .join(cluster_mean)  )
-
-# (print는 꼭 필요한 것만)
+    
 print("\n[Cluster profile summary] size + dominant timeband + weekend tendency")
 print(cluster_profile_summary[["n_rows", "dominant_ts", "dominant_ts_share", "mean_share_wkend"]].to_string())
 
