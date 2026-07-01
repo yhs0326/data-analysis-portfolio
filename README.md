@@ -73,36 +73,105 @@ R 전처리 및 지표 구성, SQL 데이터 결합, Python KMeans·회귀분석
 
 ---
 
+### 3. Consumer Pattern Clustering
+
+서울 소비 데이터를 업종 중분류 단위로 정리하고, 시간대별 소비 비중을 기준으로 업종별 소비 패턴을 군집화했습니다.
+
+**Problem**  
+업종별 소비 전략은 매출 규모뿐 아니라 소비가 집중되는 시간대에 따라 달라질 수 있습니다. 본 프로젝트는 업종별 소비 시간대를 유형화하고, 전후 시점에서 소비 패턴과 피크 시간이 어떻게 이동했는지 분석했습니다.
+
+**Key Results**
+- 패턴 유지율: 40.9%
+- 군집 이동률: 59.1%
+- 피크 시간대 변경률: 81.8%
+- 최다 피크 이동: 퇴근 → 점심
+
+**Skills**  
+SQL 데이터마트 생성, Python KMeans 군집분석, 실루엣 점수 기반 군집 수 선택, 시각화
+
+---
+
+### 4. Chronic Disease Management KPI
+
+CHS와 KNHANES 데이터를 활용해 만성질환 관리 수준을 복합관리 KPI로 정의하고, 지역별 관리 격차와 취약집단을 분석했습니다.
+
+**Problem**  
+만성질환 관리는 인지, 치료, 복약, 관리교육, 생활행태 등 여러 요인이 함께 작용하지만, 이를 통합적으로 비교할 수 있는 기준이 부족합니다. 본 프로젝트는 복합관리 KPI를 설계해 관리 사각지대를 식별하고자 했습니다.
+
+**Key Results**
+- 지역별 복합관리율 차이 확인
+- 인지·관리교육·소득 수준이 관리 성공과 관련
+- 평균 개선 시나리오만으로는 변화폭이 제한적
+- 취약 지역 및 취약 유형 중심의 타깃 접근 필요
+
+**Skills**  
+R 전처리 및 KPI 산출, PostgreSQL 데이터 추출, 로지스틱 회귀분석, PCA, KMeans/EM 군집분석
+
+---
+
 ## Repository Structure
 
 ```text
 data-analysis-portfolio/
 ├── README.md
+├── assets/
+│   └── images/
+│
 ├── projects/
-│   ├── consumer-pattern-transition/
+│   ├── 01_consumer_pattern_transition/
 │   │   ├── README.md
 │   │   ├── sql/
+│   │   │   ├── 01_create_base_table.sql
+│   │   │   ├── 02_feature_engineering.sql
+│   │   │   ├── 03_transition_detection.sql
+│   │   │   └── 04_summary_tables.sql
 │   │   ├── python/
+│   │   │   ├── 01_clustering.py
+│   │   │   ├── 02_transition_analysis.py
+│   │   │   ├── 03_risk_analysis.py
+│   │   │   └── 04_visualization.py
 │   │   ├── r/
-│   │   └── outputs/
-│   ├── youth-quality-of-work/
+│   │   │   └── 01_statistical_test.R
+│   │   ├── outputs/
+│   │   │   ├── figures/
+│   │   │   └── portfolio.pdf
+│   │   └── data/
+│   │       └── README.md
+│   │
+│   ├── 02_youth_quality_of_work/
 │   │   ├── README.md
 │   │   ├── r/
+│   │   │   ├── 01_preprocessing.R
+│   │   │   └── 02_index_generation.R
 │   │   ├── sql/
+│   │   │   └── 01_merge_2017_2023.sql
 │   │   ├── python/
-│   │   └── outputs/
-│   ├── consumer-pattern-clustering/
+│   │   │   ├── 01_clustering.py
+│   │   │   ├── 02_regression.py
+│   │   │   └── 03_visualization.py
+│   │   ├── outputs/
+│   │   │   ├── figures/
+│   │   │   └── portfolio.pdf
+│   │   └── data/
+│   │       └── README.md
+│   │
+│   ├── 03_consumer_pattern_clustering/
 │   │   ├── README.md
 │   │   ├── sql/
 │   │   ├── python/
-│   │   └── outputs/
-│   └── chronic-disease-management-kpi/
+│   │   ├── outputs/
+│   │   └── data/
+│   │       └── README.md
+│   │
+│   └── 04_chronic_disease_management_kpi/
 │       ├── README.md
 │       ├── sql/
 │       ├── r/
-│       └── outputs/
-├── assets/
-│   └── images/
+│       ├── outputs/
+│       └── data/
+│           └── README.md
+│
+├── requirements.txt
 └── .gitignore
 ```
 
