@@ -1,7 +1,5 @@
-# 원본 R 코드의 내용과 실행 순서는 변경하지 않았습니다.
-# 가독성을 위해 섹션 주석만 정리했습니다.
-# 현재 버전은 포트폴리오용 정리본이며, 로직 수정은 하지 않았습니다.
-# 파일 경로는 프로젝트 폴더 기준 상대경로로 정리했습니다.
+# Consumer Pattern Transition Analysis
+# R script for missing-value handling and statistical testing.
 
 # ============================================================
 # 1. 데이터 불러오기
