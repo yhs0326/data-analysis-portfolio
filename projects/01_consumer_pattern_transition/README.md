@@ -124,12 +124,16 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 │   ├── 08_retention_analysis.sql
 │   ├── 09_slide_core_metrics.sql
 │   ├── 10_slide_risk_curve.sql
-│   └── 11_validation_checks.sql
+│   ├── 11_validation_checks.sql
+│   └── archive/
+│       └── 00_full_original_query.sql
 ├── python/
 │   ├── 01_clustering.py
 │   ├── 02_transition_analysis.py
 │   ├── 03_risk_analysis.py
-│   └── 04_visualization.py
+│   ├── 04_visualization.py
+│   └── archive/
+│       └── 00_full_original_analysis.py
 ├── r/
 │   └── 01_statistical_test.R
 ├── output/
@@ -145,6 +149,10 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 ```
 
 > `output/`에는 현재 발표용 PDF가 보관되어 있고, `outputs/`는 분석 과정에서 생성되는 그림·표 산출물을 정리하기 위한 폴더입니다.
+>
+> Python 단계별 파일은 분석 흐름을 검토하기 쉽도록 기능 단위로 분리한 코드입니다. 일부 파일은 이전 단계에서 생성된 `train`, `test`, `train2`, `test2`, `wf` 등의 중간 객체를 전제로 합니다. 전체 실행 흐름은 `python/archive/00_full_original_analysis.py`에서 확인할 수 있습니다.
+>
+> SQL 단계별 파일은 분석 흐름을 검토하기 쉽도록 기능 단위로 분리한 쿼리이며, 전체 SQL 실행 흐름은 `sql/archive/00_full_original_query.sql`에서 확인할 수 있습니다.
 
 ---
 
@@ -157,10 +165,12 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 | `sql/03_transition_detection.sql` | 전분기 대비 소비 구조 전이 여부 정의 |
 | `sql/04_summary_tables.sql` | 전이/유지 집단 비교와 핵심 요약 테이블 생성 |
 | `sql/05_weighted_metrics.sql` ~ `sql/11_validation_checks.sql` | 가중 지표, 코호트, 전이행렬, 유지율, 검증용 요약 테이블 생성 |
+| `sql/archive/00_full_original_query.sql` | 실제 분석 과정에서 사용한 전체 SQL 쿼리 원본 |
 | `python/01_clustering.py` | 시간대 매출 비중 기반 소비 패턴 군집화 |
 | `python/02_transition_analysis.py` | 전이 변수 생성 및 전이/유지 집단 비교 |
 | `python/03_risk_analysis.py` | 위험률 비교, Walk-forward 검증, 모델 성능 평가 |
 | `python/04_visualization.py` | 분석 결과 시각화 및 산출물 저장 |
+| `python/archive/00_full_original_analysis.py` | 실제 분석 과정에서 사용한 전체 Python 분석 코드 원본 |
 | `r/01_statistical_test.R` | 전이/유지 집단의 피크 집중도 변화 차이에 대한 통계검정 |
 | `data/README.md` | 원본 데이터 비공개 사유와 데이터 폴더 구조 안내 |
 
