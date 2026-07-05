@@ -12,7 +12,7 @@ R, SQL, Python을 활용해 데이터 전처리, 분석용 데이터마트 구�
 - Double Major: Applied Statistics
 - Tools: SQL, Python, R, PostgreSQL
 - Certificate: ADsP, SQLD
-- Interests: Data Analysis, BI, CRM/Marketing Analytics, Public Data Analysis
+- Interests: Data Analysis, Data Science
 
 ---
 
