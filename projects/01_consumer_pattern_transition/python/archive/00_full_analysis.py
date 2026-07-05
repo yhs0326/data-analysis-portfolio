@@ -1,16 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Feb  6 20:21:51 2026
-
-@author: LG
-
-
-- 원본 코드의 내용과 실행 순서는 변경하지 않았습니다.
-- 가독성을 위해 섹션 주석만 추가했습니다.
-- 현재 경로는 GitHub 업로드를 위해 프로젝트 기준 경로로 수정했습니다.
-- GitHub 업로드 시에는 README에서 실행 환경과 파일 위치를 함께 설명하는 방식을 권장합니다.
-"""
-
 # ============================================================
 # 0. 라이브러리 불러오기
 # ============================================================
@@ -18,8 +5,6 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-# GitHub 업로드용 프로젝트 기준 경로
-# 이 파일을 projects/01_consumer_pattern_transition/python/archive/ 안에 두는 것을 기준으로 설정했습니다.
 PROJECT_DIR = Path(__file__).resolve().parents[2]
 
 DATA_RAW_DIR = PROJECT_DIR / "data" / "raw"
