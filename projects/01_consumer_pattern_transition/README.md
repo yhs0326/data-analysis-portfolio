@@ -117,7 +117,6 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 │   ├── 01_create_base_table.sql
 │   ├── 02_feature_engineering.sql
 │   ├── 03_transition_detection.sql
-│   ├── 04_summary_tables.sql
 │   ├── 05_weighted_metrics.sql
 │   ├── 06_cohort_heatmap.sql
 │   ├── 07_transition_matrix.sql
@@ -163,7 +162,6 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 | `sql/01_create_base_table.sql` | 카드매출 원천 데이터를 상권·업종·분기 단위 분석 테이블로 구성 |
 | `sql/02_feature_engineering.sql` | 시간대별 매출 비중, 주말 비중 등 주요 feature 생성 |
 | `sql/03_transition_detection.sql` | 전분기 대비 소비 구조 전이 여부 정의 |
-| `sql/04_summary_tables.sql` | 전이/유지 집단 비교와 핵심 요약 테이블 생성 |
 | `sql/05_weighted_metrics.sql` ~ `sql/11_validation_checks.sql` | 가중 지표, 코호트, 전이행렬, 유지율, 검증용 요약 테이블 생성 |
 | `sql/archive/00_full_query.sql` | 실제 분석 과정에서 사용한 전체 SQL 쿼리 원본 |
 | `python/01_clustering.py` | 시간대 매출 비중 기반 소비 패턴 군집화 |
