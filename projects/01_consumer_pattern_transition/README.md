@@ -113,19 +113,6 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 ```text
 01_consumer_pattern_transition/
 ├── README.md
-├── sql/
-│   ├── 01_create_base_table.sql
-│   ├── 02_feature_engineering.sql
-│   ├── 03_transition_detection.sql
-│   ├── 05_weighted_metrics.sql
-│   ├── 06_cohort_heatmap.sql
-│   ├── 07_transition_matrix.sql
-│   ├── 08_retention_analysis.sql
-│   ├── 09_slide_core_metrics.sql
-│   ├── 10_slide_risk_curve.sql
-│   ├── 11_validation_checks.sql
-│   └── archive/
-│       └── 00_full_query.sql
 ├── python/
 │   ├── 01_clustering.py
 │   ├── 02_transition_analysis.py
@@ -135,6 +122,22 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 │       └── 00_full_analysis.py
 ├── r/
 │   └── 01_statistical_test.R
+├── sql/
+│   ├── archive/
+│   │   └── 00_full_query.sql
+│   ├── .gitkeep
+│   ├── 01_create_base_table.sql
+│   ├── 02_feature_engineering.sql
+│   ├── 03_transition_detection.sql
+│   ├── 04_cohort_tables.sql
+│   ├── 05_weighted_metrics.sql
+│   ├── 06_cohort_heatmap.sql
+│   ├── 07_transition_matrix.sql
+│   ├── 08_retention_analysis.sql
+│   ├── 09_slide_core_metrics.sql
+│   ├── 10_slide_risk_curve.sql
+│   ├── 11_validation_checks.sql
+│   └── README.md
 ├── output/
 │   └── 포트폴리오3 수정.pdf
 ├── outputs/
@@ -159,17 +162,19 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 
 | 파일 | 역할 |
 |---|---|
-| `sql/01_create_base_table.sql` | 카드매출 원천 데이터를 상권·업종·분기 단위 분석 테이블로 구성 |
-| `sql/02_feature_engineering.sql` | 시간대별 매출 비중, 주말 비중 등 주요 feature 생성 |
-| `sql/03_transition_detection.sql` | 전분기 대비 소비 구조 전이 여부 정의 |
-| `sql/05_weighted_metrics.sql` ~ `sql/11_validation_checks.sql` | 가중 지표, 코호트, 전이행렬, 유지율, 검증용 요약 테이블 생성 |
-| `sql/archive/00_full_query.sql` | 실제 분석 과정에서 사용한 전체 SQL 쿼리 원본 |
 | `python/01_clustering.py` | 시간대 매출 비중 기반 소비 패턴 군집화 |
 | `python/02_transition_analysis.py` | 전이 변수 생성 및 전이/유지 집단 비교 |
 | `python/03_risk_analysis.py` | 위험률 비교, Walk-forward 검증, 모델 성능 평가 |
 | `python/04_visualization.py` | 분석 결과 시각화 및 산출물 저장 |
 | `python/archive/00_full_analysis.py` | 실제 분석 과정에서 사용한 전체 Python 분석 코드 원본 |
 | `r/01_statistical_test.R` | 전이/유지 집단의 피크 집중도 변화 차이에 대한 통계검정 |
+| `sql/01_create_base_table.sql` | 카드매출 원천 데이터를 상권·업종·분기 단위 분석 테이블로 구성 |
+| `sql/02_feature_engineering.sql` | 시간대별 매출 비중, 주말 비중 등 주요 feature 생성 |
+| `sql/03_transition_detection.sql` | 전분기 대비 소비 구조 전이 여부 정의 |
+| `sql/04_cohort_tables.sql` | 코호트 분석용 테이블 생성 |
+| `sql/05_weighted_metrics.sql` ~ `sql/11_validation_checks.sql` | 가중 지표, 코호트 히트맵, 전이행렬, 유지율, 검증용 요약 테이블 생성 |
+| `sql/archive/00_full_query.sql` | 실제 분석 과정에서 사용한 전체 SQL 쿼리 원본 |
+| `sql/README.md` | SQL 실행 순서 및 쿼리 구성 안내 |
 | `data/README.md` | 원본 데이터 비공개 사유와 데이터 폴더 구조 안내 |
 
 ---
