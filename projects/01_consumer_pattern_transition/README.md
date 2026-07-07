@@ -139,7 +139,7 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 │   ├── 11_validation_checks.sql
 │   └── README.md
 ├── output/
-│   └── 포트폴리오3 수정.pdf
+│   └── consumer_pattern_transition_portfolio.pdf
 ├── outputs/
 │   ├── figures/
 │   └── tables/
