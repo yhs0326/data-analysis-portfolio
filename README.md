@@ -120,20 +120,6 @@ data-analysis-portfolio/
 ├── projects/
 │   ├── 01_consumer_pattern_transition/
 │   │   ├── README.md
-│   │   ├── sql/
-│   │   │   ├── 01_create_base_table.sql
-│   │   │   ├── 02_feature_engineering.sql
-│   │   │   ├── 03_transition_detection.sql
-│   │   │   ├── 04_summary_tables.sql
-│   │   │   ├── 05_weighted_metrics.sql
-│   │   │   ├── 06_cohort_heatmap.sql
-│   │   │   ├── 07_transition_matrix.sql
-│   │   │   ├── 08_retention_analysis.sql
-│   │   │   ├── 09_slide_core_metrics.sql
-│   │   │   ├── 10_slide_risk_curve.sql
-│   │   │   ├── 11_validation_checks.sql
-│   │   │   └── archive/
-│   │   │       └── 00_full_query.sql
 │   │   ├── python/
 │   │   │   ├── 01_clustering.py
 │   │   │   ├── 02_transition_analysis.py
@@ -143,16 +129,32 @@ data-analysis-portfolio/
 │   │   │       └── 00_full_analysis.py
 │   │   ├── r/
 │   │   │   └── 01_statistical_test.R
-│   │   ├── data/
-│   │   │   ├── README.md
-│   │   │   ├── raw/
-│   │   │   ├── processed/
-│   │   │   └── external/
+│   │   ├── sql/
+│   │   │   ├── archive/
+│   │   │   │   └── 00_full_query.sql
+│   │   │   ├── .gitkeep
+│   │   │   ├── 01_create_base_table.sql
+│   │   │   ├── 02_feature_engineering.sql
+│   │   │   ├── 03_transition_detection.sql
+│   │   │   ├── 04_cohort_tables.sql
+│   │   │   ├── 05_weighted_metrics.sql
+│   │   │   ├── 06_cohort_heatmap.sql
+│   │   │   ├── 07_transition_matrix.sql
+│   │   │   ├── 08_retention_analysis.sql
+│   │   │   ├── 09_slide_core_metrics.sql
+│   │   │   ├── 10_slide_risk_curve.sql
+│   │   │   ├── 11_validation_checks.sql
+│   │   │   └── README.md
 │   │   ├── output/
-│   │   │   └── 포트폴리오3 수정.pdf
-│   │   └── outputs/
-│   │       ├── figures/
-│   │       └── tables/
+│   │   │   └── consumer_pattern_transition_portfolio.pdf
+│   │   ├── outputs/
+│   │   │   ├── figures/
+│   │   │   └── tables/
+│   │   └── data/
+│   │       ├── README.md
+│   │       ├── raw/
+│   │       ├── processed/
+│   │       └── external/
 │   │
 │   ├── 02_youth_quality_of_work/
 │   │   ├── README.md
