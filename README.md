@@ -124,36 +124,61 @@ data-analysis-portfolio/
 │   │   │   ├── 01_create_base_table.sql
 │   │   │   ├── 02_feature_engineering.sql
 │   │   │   ├── 03_transition_detection.sql
-│   │   │   └── 04_summary_tables.sql
+│   │   │   ├── 04_summary_tables.sql
+│   │   │   ├── 05_weighted_metrics.sql
+│   │   │   ├── 06_cohort_heatmap.sql
+│   │   │   ├── 07_transition_matrix.sql
+│   │   │   ├── 08_retention_analysis.sql
+│   │   │   ├── 09_slide_core_metrics.sql
+│   │   │   ├── 10_slide_risk_curve.sql
+│   │   │   ├── 11_validation_checks.sql
+│   │   │   └── archive/
+│   │   │       └── 00_full_query.sql
 │   │   ├── python/
 │   │   │   ├── 01_clustering.py
 │   │   │   ├── 02_transition_analysis.py
 │   │   │   ├── 03_risk_analysis.py
-│   │   │   └── 04_visualization.py
+│   │   │   ├── 04_visualization.py
+│   │   │   └── archive/
+│   │   │       └── 00_full_analysis.py
 │   │   ├── r/
 │   │   │   └── 01_statistical_test.R
-│   │   ├── outputs/
-│   │   │   ├── figures/
-│   │   │   └── portfolio.pdf
-│   │   └── data/
-│   │       └── README.md
+│   │   ├── data/
+│   │   │   ├── README.md
+│   │   │   ├── raw/
+│   │   │   ├── processed/
+│   │   │   └── external/
+│   │   ├── output/
+│   │   │   └── 포트폴리오3 수정.pdf
+│   │   └── outputs/
+│   │       ├── figures/
+│   │       └── tables/
 │   │
 │   ├── 02_youth_quality_of_work/
 │   │   ├── README.md
-│   │   ├── r/
-│   │   │   ├── 01_preprocessing.R
-│   │   │   └── 02_index_generation.R
-│   │   ├── sql/
-│   │   │   └── 01_merge_2017_2023.sql
-│   │   ├── python/
-│   │   │   ├── 01_clustering.py
-│   │   │   ├── 02_regression.py
-│   │   │   └── 03_visualization.py
+│   │   ├── data/
+│   │   │   └── README.md
 │   │   ├── outputs/
-│   │   │   ├── figures/
-│   │   │   └── portfolio.pdf
-│   │   └── data/
-│   │       └── README.md
+│   │   │   └── figures/
+│   │   ├── python/
+│   │   │   ├── 00_full_analysis_pipeline.py
+│   │   │   ├── 01_setup_and_eda.py
+│   │   │   ├── 02_clustering_analysis.py
+│   │   │   ├── 03_ols_regression.py
+│   │   │   ├── 04_logistic_vulnerable_group.py
+│   │   │   └── 05_nonparametric_tests.py
+│   │   ├── r/
+│   │   │   ├── 00_full_preprocessing_pipeline.R
+│   │   │   ├── 01_macro_indicators_eda.R
+│   │   │   ├── 02_load_and_select_kwcs_variables.R
+│   │   │   ├── 03_clean_2023_kwcs.R
+│   │   │   └── 04_clean_2017_kwcs.R
+│   │   └── sql/
+│   │       ├── 00_full_data_mart_pipeline.sql
+│   │       ├── 01_create_clean_tables.sql
+│   │       ├── 02_merge_and_create_model_data.sql
+│   │       ├── 03_summary_queries.sql
+│   │       └── 04_validation_checks.sql
 │   │
 │   ├── 03_consumer_pattern_clustering/
 │   │   ├── README.md
