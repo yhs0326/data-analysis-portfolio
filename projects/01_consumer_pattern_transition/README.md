@@ -138,9 +138,8 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
 │   ├── 10_slide_risk_curve.sql
 │   ├── 11_validation_checks.sql
 │   └── README.md
-├── output/
-│   └── consumer_pattern_transition_portfolio.pdf
 ├── outputs/
+│   ├── consumer_pattern_transition_portfolio.pdf
 │   ├── figures/
 │   └── tables/
 └── data/
@@ -150,7 +149,7 @@ TEST 기준 위험률은 전이 없음 28.8%, 전이 있음 43.7%로 나타났�
     └── external/
 ```
 
-> `output/`에는 현재 발표용 PDF가 보관되어 있고, `outputs/`는 분석 과정에서 생성되는 그림·표 산출물을 정리하기 위한 폴더입니다.
+> `outputs/consumer_pattern_transition_portfolio.pdf`에는 현재 발표용 PDF가 보관되어 있고, `outputs/figures/`, `outputs/tables/`는 분석 과정에서 생성되는 그림·표 산출물을 정리하기 위한 폴더입니다.
 >
 > Python 단계별 파일은 분석 흐름을 검토하기 쉽도록 기능 단위로 분리한 코드입니다. 일부 파일은 이전 단계에서 생성된 `train`, `test`, `train2`, `test2`, `wf` 등의 중간 객체를 전제로 합니다. 전체 실행 흐름은 `python/archive/00_full_analysis.py`에서 확인할 수 있습니다.
 >
