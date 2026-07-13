@@ -29,10 +29,8 @@ R, SQL, Python을 활용해 데이터 전처리, 분석용 데이터마트 구�
 
 | No. | Project | Problem | Methods | Key Result |
 |---|---|---|---|---|
-| 1 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 소비 구조 전이가 다음 분기 위험 신호가 될 수 있는가 | SQL, Python, R, Clustering, Cohort Analysis | 전이 집단 위험률 47.9%, 유지 집단 26.8%, 약 1.8배 증가 |
-| 2 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 청년 고용 문제는 취업 여부가 아니라 노동의 질 문제인가 | R, SQL, Python, KMeans, Logistic Regression, OLS | 청년 노동의 질 3.23 → 3.13, 취약 노동유형 33.17% |
-| 3 | [Consumer Pattern Clustering](projects/03_consumer_pattern_clustering/) | 업종별 소비 시간대는 어떻게 달라졌는가 | SQL, Python, KMeans, Silhouette | 패턴 유지율 40.9%, 피크 시간대 변경률 81.8% |
-| 4 | [Chronic Disease Management KPI](projects/04_chronic_disease_management_kpi/) | 만성질환 관리는 어디에서 막히는가 | R, PostgreSQL, Logistic Regression, PCA, Clustering | 복합관리 KPI 설계, 지역별 관리 격차 및 취약집단 도출 |
+| 1 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 소비 구조 전이가 다음 분기 위험 신호가 될 수 있는가 | SQL, Python, R, Clustering, Cohort Analysis | 전이 집단 위험률 47.9%, 유지 집단 26.8%, 약 1.8배 높게 관찰 |
+| 2 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 청년 고용 문제는 취업 여부가 아니라 노동의 질 문제인가 | R, SQL, Python, KMeans, Logistic Regression, OLS | 청년 노동의 질 3.23 → 3.13, 취약 노동유형 약 33.2% |
 
 ---
 
@@ -48,7 +46,7 @@ R, SQL, Python을 활용해 데이터 전처리, 분석용 데이터마트 구�
 **Key Results**
 - 전이 집단 위험률: 47.9%
 - 유지 집단 위험률: 26.8%
-- 전이 발생 시 다음 분기 위험 약 1.8배 증가
+- 전이 집단의 다음 분기 위험률이 유지 집단 대비 약 1.8배 높게 관찰
 
 **Skills**  
 SQL 데이터마트 생성, Python 군집분석 및 전이 탐지, R 통계검정
@@ -65,47 +63,11 @@ KWCS 2017·2023 데이터를 활용해 청년 노동의 질 지수를 구성하�
 **Key Results**
 - 청년 노동의 질: 3.23 → 3.13
 - 중장년 노동의 질: 거의 변화 없음
-- 취약 노동유형 비중: 33.17%
+- 취약 노동유형 비중: 약 33.2%
 - 2023년, 임시직, 일용직은 취약 노동유형과 양의 관련
 
 **Skills**  
 R 전처리 및 지표 구성, SQL 데이터 결합, Python KMeans·회귀분석·시각화
-
----
-
-### 3. Consumer Pattern Clustering
-
-서울 소비 데이터를 업종 중분류 단위로 정리하고, 시간대별 소비 비중을 기준으로 업종별 소비 패턴을 군집화했습니다.
-
-**Problem**  
-업종별 소비 전략은 매출 규모뿐 아니라 소비가 집중되는 시간대에 따라 달라질 수 있습니다. 본 프로젝트는 업종별 소비 시간대를 유형화하고, 전후 시점에서 소비 패턴과 피크 시간이 어떻게 이동했는지 분석했습니다.
-
-**Key Results**
-- 패턴 유지율: 40.9%
-- 군집 이동률: 59.1%
-- 피크 시간대 변경률: 81.8%
-- 최다 피크 이동: 퇴근 → 점심
-
-**Skills**  
-SQL 데이터마트 생성, Python KMeans 군집분석, 실루엣 점수 기반 군집 수 선택, 시각화
-
----
-
-### 4. Chronic Disease Management KPI
-
-CHS와 KNHANES 데이터를 활용해 만성질환 관리 수준을 복합관리 KPI로 정의하고, 지역별 관리 격차와 취약집단을 분석했습니다.
-
-**Problem**  
-만성질환 관리는 인지, 치료, 복약, 관리교육, 생활행태 등 여러 요인이 함께 작용하지만, 이를 통합적으로 비교할 수 있는 기준이 부족합니다. 본 프로젝트는 복합관리 KPI를 설계해 관리 사각지대를 식별하고자 했습니다.
-
-**Key Results**
-- 지역별 복합관리율 차이 확인
-- 인지·관리교육·소득 수준이 관리 성공과 관련
-- 평균 개선 시나리오만으로는 변화폭이 제한적
-- 취약 지역 및 취약 유형 중심의 타깃 접근 필요
-
-**Skills**  
-R 전처리 및 KPI 산출, PostgreSQL 데이터 추출, 로지스틱 회귀분석, PCA, KMeans/EM 군집분석
 
 ---
 
@@ -156,47 +118,31 @@ data-analysis-portfolio/
 │   │       ├── processed/
 │   │       └── external/
 │   │
-│   ├── 02_youth_quality_of_work/
-│   │   ├── README.md
-│   │   ├── data/
-│   │   │   └── README.md
-│   │   ├── outputs/
-│   │   │   └── figures/
-│   │   ├── python/
-│   │   │   ├── 00_full_analysis_pipeline.py
-│   │   │   ├── 01_setup_and_eda.py
-│   │   │   ├── 02_clustering_analysis.py
-│   │   │   ├── 03_ols_regression.py
-│   │   │   ├── 04_logistic_vulnerable_group.py
-│   │   │   └── 05_nonparametric_tests.py
-│   │   ├── r/
-│   │   │   ├── 00_full_preprocessing_pipeline.R
-│   │   │   ├── 01_macro_indicators_eda.R
-│   │   │   ├── 02_load_and_select_kwcs_variables.R
-│   │   │   ├── 03_clean_2023_kwcs.R
-│   │   │   └── 04_clean_2017_kwcs.R
-│   │   └── sql/
-│   │       ├── 00_full_data_mart_pipeline.sql
-│   │       ├── 01_create_clean_tables.sql
-│   │       ├── 02_merge_and_create_model_data.sql
-│   │       ├── 03_summary_queries.sql
-│   │       └── 04_validation_checks.sql
-│   │
-│   ├── 03_consumer_pattern_clustering/
-│   │   ├── README.md
-│   │   ├── sql/
-│   │   ├── python/
-│   │   ├── outputs/
-│   │   └── data/
-│   │       └── README.md
-│   │
-│   └── 04_chronic_disease_management_kpi/
+│   └── 02_youth_quality_of_work/
 │       ├── README.md
-│       ├── sql/
-│       ├── r/
+│       ├── data/
+│       │   └── README.md
 │       ├── outputs/
-│       └── data/
-│           └── README.md
+│       │   └── figures/
+│       ├── python/
+│       │   ├── 00_full_analysis_pipeline.py
+│       │   ├── 01_setup_and_eda.py
+│       │   ├── 02_clustering_analysis.py
+│       │   ├── 03_ols_regression.py
+│       │   ├── 04_logistic_vulnerable_group.py
+│       │   └── 05_nonparametric_tests.py
+│       ├── r/
+│       │   ├── 00_full_preprocessing_pipeline.R
+│       │   ├── 01_macro_indicators_eda.R
+│       │   ├── 02_load_and_select_kwcs_variables.R
+│       │   ├── 03_clean_2023_kwcs.R
+│       │   └── 04_clean_2017_kwcs.R
+│       └── sql/
+│           ├── 00_full_data_mart_pipeline.sql
+│           ├── 01_create_clean_tables.sql
+│           ├── 02_merge_and_create_model_data.sql
+│           ├── 03_summary_queries.sql
+│           └── 04_validation_checks.sql
 │
 ├── requirements.txt
 └── .gitignore
