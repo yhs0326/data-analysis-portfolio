@@ -107,9 +107,8 @@ data-analysis-portfolio/
 │   │   │   ├── 10_slide_risk_curve.sql
 │   │   │   ├── 11_validation_checks.sql
 │   │   │   └── README.md
-│   │   ├── output/
-│   │   │   └── consumer_pattern_transition_portfolio.pdf
 │   │   ├── outputs/
+│   │   │   ├── consumer_pattern_transition_portfolio.pdf
 │   │   │   ├── figures/
 │   │   │   └── tables/
 │   │   └── data/
