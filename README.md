@@ -30,7 +30,7 @@ R, SQL, Python을 활용해 데이터 전처리, 분석용 데이터마트 구�
 | No. | Project | Problem | Methods | Key Result |
 |---|---|---|---|---|
 | 1 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 소비 구조 전이가 다음 분기 위험 신호가 될 수 있는가 | SQL, Python, R, Clustering, Cohort Analysis | 전이 집단 위험률 47.9%, 유지 집단 26.8%, 약 1.8배 증가 |
-| 2 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 청년 고용 문제는 취업 여부가 아니라 노동의 질 문제인가 | R, SQL, Python, KMeans, Logistic Regression, OLS | 청년 노동의 질 3.2319 → 3.1347, 취약 노동유형 33.17% |
+| 2 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 청년 고용 문제는 취업 여부가 아니라 노동의 질 문제인가 | R, SQL, Python, KMeans, Logistic Regression, OLS | 청년 노동의 질 3.23 → 3.13, 취약 노동유형 33.17% |
 | 3 | [Consumer Pattern Clustering](projects/03_consumer_pattern_clustering/) | 업종별 소비 시간대는 어떻게 달라졌는가 | SQL, Python, KMeans, Silhouette | 패턴 유지율 40.9%, 피크 시간대 변경률 81.8% |
 | 4 | [Chronic Disease Management KPI](projects/04_chronic_disease_management_kpi/) | 만성질환 관리는 어디에서 막히는가 | R, PostgreSQL, Logistic Regression, PCA, Clustering | 복합관리 KPI 설계, 지역별 관리 격차 및 취약집단 도출 |
 
