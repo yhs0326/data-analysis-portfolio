@@ -351,13 +351,3 @@ CRM 우선점검 후보
 | Validation | Time-based Train / Validation / Final Test, Top-K, Lift, Calibration |
 | Visualization | Tableau, matplotlib |
 | Version / Portfolio | GitHub, PPT/PDF |
-
----
-
-## 16. 해석 범위와 다음 검증
-
-현재 결과는 **CRM 담당자가 먼저 확인할 후보를 얼마나 효율적으로 좁힐 수 있는지**를 검증한 Backtest입니다.
-
-실제 캠페인을 실행한 데이터는 없기 때문에 재구매 증가나 매출 개선 같은 **개입 효과 자체를 입증한 것은 아닙니다.** 실제 효과를 평가하려면 향후 Holdout 또는 A/B Test가 필요합니다.
-
-또한 `다음 4주 미구매`는 영구 이탈이 아니며, 91~98주의 평가구간은 일부 겹치므로 완전히 독립된 8회 실험으로 해석하지 않습니다.
