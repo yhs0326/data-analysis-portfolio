@@ -12,7 +12,7 @@
 - **Target Role**: Data Analyst
 - **Domain Focus**: E-commerce, CRM, Consumer Behavior
 - **Tools**: SQL, PostgreSQL, Python, R, Tableau
-- **Certificates**: ADsP, SQLD
+- **Certificates**: ADsP (2025.09), SQLD (2026.03)
 
 ### Analysis Focus
 
@@ -26,13 +26,13 @@
 
 ## Start Here
 
-지원 직무와의 연관성과 최근 프로젝트를 고려해 아래 순서로 보는 것을 권장합니다.
+프로젝트 진행 시점을 기준으로 시간 순서대로 정리했습니다.
 
-| Priority | Project | Business Question | Key Decision / Result | Portfolio |
-|---|---|---|---|---|
-| 1 | [Retail CRM Priority Design](projects/03_retail_crm_priority/) | 모든 고객을 동일하게 관리하기 어렵다면, 구매기여가 큰 고객 중 누구부터 확인할 것인가? | 구매기여 상위 20% 안에서 위험 상위 10%를 주간 우선점검 대상으로 설계. Test 91~98주 합산 기준 가치고객 미구매 65/86건(75.6%)을 Priority에서 포착 | [Project README](projects/03_retail_crm_priority/) |
-| 2 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 소비 시간대 구조의 변화가 다음 분기 위험 상권·업종을 미리 구분하는 신호가 될 수 있는가? | 전이 집단 위험률 47.9%, 유지 집단 26.8%로 약 1.8배 높게 관찰 | [README](projects/01_consumer_pattern_transition/) · [PDF](projects/01_consumer_pattern_transition/outputs/consumer_pattern_transition_portfolio.pdf) |
-| 3 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 청년 고용 문제를 취업 여부가 아니라 취업 이후 노동의 질로 보면 무엇이 달라지는가? | 청년 노동의 질 3.23 → 3.13, 청년 취업자의 33.17%를 취약 노동유형으로 식별 | [README](projects/02_youth_quality_of_work/) · [PDF](projects/02_youth_quality_of_work/outputs/youth_quality_of_work_portfolio.pdf) |
+| No. | Project | Period | Business Question | Key Decision / Result | Portfolio |
+|---|---|---|---|---|---|
+| 1 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 2026.01 ~ 2026.02 | 소비 시간대 구조의 변화가 다음 분기 위험 상권·업종을 미리 구분하는 신호가 될 수 있는가? | 전이 집단 위험률 47.9%, 유지 집단 26.8%로 약 1.8배 높게 관찰 | [README](projects/01_consumer_pattern_transition/) · [PDF](projects/01_consumer_pattern_transition/outputs/consumer_pattern_transition_portfolio.pdf) |
+| 2 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 2026.05 ~ 2026.06 | 청년 고용 문제를 취업 여부가 아니라 취업 이후 노동의 질로 보면 무엇이 달라지는가? | 청년 노동의 질 3.23 → 3.13, 청년 취업자의 33.17%를 취약 노동유형으로 식별 | [README](projects/02_youth_quality_of_work/) · [PDF](projects/02_youth_quality_of_work/outputs/youth_quality_of_work_portfolio.pdf) |
+| 3 | [Retail CRM Priority Design](projects/03_retail_crm_priority/) | 2026.07 ~ 2026.08 | 모든 고객을 동일하게 관리하기 어렵다면, 구매기여가 큰 고객 중 누구부터 확인할 것인가? | 구매기여 상위 20% 안에서 위험 상위 10%를 주간 우선점검 대상으로 설계. Test 91~98주 합산 기준 가치고객 미구매 65/86건(75.6%)을 Priority에서 포착 | [Project README](projects/03_retail_crm_priority/) · [Portfolio PDF](projects/03_retail_crm_priority/outputs/retail_crm_priority_portfolio.pdf) |
 
 > Retail CRM 프로젝트의 `65/86`은 91~98주 **가구×기준주차 기록을 합산한 Backtest 결과**이며, 서로 겹치는 미래 4주 구간을 8개의 독립 실험으로 해석하지 않습니다.
 
@@ -57,6 +57,8 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 ## Representative Projects
 
 ### 03. Retail CRM Priority Design
+
+**프로젝트 기간**: 2026.07 ~ 2026.08
 
 **문제**  
 전체 고객의 미구매 위험만 높게 정렬하면 실제로 회사가 먼저 관리해야 할 고객과 일치하지 않을 수 있습니다. 이 프로젝트는 **구매기여가 큰 고객 중 다음 4주 미구매 가능성이 상대적으로 높은 고객을 HOUSEHOLD_KEY 단위로 좁히는 CRM 우선점검 기준**을 설계했습니다.
@@ -88,11 +90,13 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 **범위**  
 이 결과는 CRM 캠페인의 매출 효과를 증명한 것이 아니라 **우선 확인할 고객을 선별한 Backtest**입니다.
 
-→ [Project README](projects/03_retail_crm_priority/)
+→ [Project README](projects/03_retail_crm_priority/) · [Portfolio PDF](projects/03_retail_crm_priority/outputs/retail_crm_priority_portfolio.pdf)
 
 ---
 
 ### 01. Consumer Pattern Transition
+
+**프로젝트 기간**: 2026.01 ~ 2026.02
 
 서울 카드매출 분기 데이터를 활용해 **시간대별 소비 구조의 변화가 다음 분기 위험과 함께 나타나는지** 분석했습니다.
 
@@ -107,6 +111,8 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 ---
 
 ### 02. Youth Quality of Work Analysis
+
+**프로젝트 기간**: 2026.05 ~ 2026.06
 
 KWCS 2017·2023을 활용해 취업률만으로 포착하기 어려운 **청년 취업 이후 노동 경험의 질**을 측정하고 취약 노동유형을 분석했습니다.
 
