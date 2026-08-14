@@ -321,15 +321,28 @@ CRM 우선점검 후보
 03_retail_crm_priority/
 ├── README.md
 ├── python/
+│   ├── retail_ecommerce.py
+│   └── retail_ecommerce_modeling.py
 ├── sql/
+│   └── retail_analysis.sql
 └── outputs/
+    └── retail_crm_priority.pdf
 ```
-
-현재 README와 폴더 구조를 먼저 생성했으며, 최종 Python 코드·SQL 쿼리·발표용 결과물은 기존 분석 파일명을 유지한 상태로 각 폴더에 업로드할 예정입니다.
 
 ---
 
-## 14. Tech Stack
+## 14. Main Files
+
+| 파일 | 역할 |
+|---|---|
+| [`python/retail_ecommerce.py`](python/retail_ecommerce.py) | 원본 거래·상품 데이터 프로파일링과 분석 전 데이터 구조·품질 점검 |
+| [`python/retail_ecommerce_modeling.py`](python/retail_ecommerce_modeling.py) | 고객×주차 모델 데이터 기반 미구매 위험 모델링, Final Test, CRM Priority 시뮬레이션 및 반복 검증 |
+| [`sql/retail_analysis.sql`](sql/retail_analysis.sql) | RAW 적재·검증부터 분석용 테이블 구성까지 수행한 전체 SQL 파이프라인 |
+| [`outputs/retail_crm_priority.pdf`](outputs/retail_crm_priority.pdf) | 프로젝트 문제 정의, 분석 과정, 핵심 결과와 CRM 우선점검 설계를 정리한 포트폴리오 PDF |
+
+---
+
+## 15. Tech Stack
 
 | 구분 | 사용 도구 |
 |---|---|
@@ -341,7 +354,7 @@ CRM 우선점검 후보
 
 ---
 
-## 15. 해석 범위와 다음 검증
+## 16. 해석 범위와 다음 검증
 
 현재 결과는 **CRM 담당자가 먼저 확인할 후보를 얼마나 효율적으로 좁힐 수 있는지**를 검증한 Backtest입니다.
 
