@@ -30,7 +30,7 @@
 
 | No. | Project | Period | Business Question | Key Decision / Result | Portfolio |
 |---|---|---|---|---|---|
-| 4 | [Retail CRM Priority - Campaign & Coupon Deep Dive](projects/04_retail_crm_campaign_coupon_deepdive/) | 2026.08 | 먼저 확인할 고객은 찾았다. 그렇다면 그 고객에게 어떤 CRM 접근을 검토할 근거가 있는가? | 구매가치 Top20% → Risk Top10%로 50가구를 먼저 좁힌 뒤 과거 프로모션 반응을 결합. 반복 반응 관측의 현재 쿠폰 사용률 40.8%, 최종 50가구를 반응 근거에 따라 4개 CRM 접근 검토 방향으로 분리 | [README](projects/04_retail_crm_campaign_coupon_deepdive/) · [PDF](projects/04_retail_crm_campaign_coupon_deepdive/outputs/retail_crm_campaign_coupon_deepdive_portfolio.pdf) |
+| 4 | [Retail CRM Priority - Campaign & Coupon Deep Dive](projects/04_retail_crm_campaign_coupon_deepdive/) | 2026.08 | 먼저 확인할 고객은 찾았다. 그렇다면 그 고객에게 어떤 CRM 접근을 검토할 근거가 있는가? | 구매가치 Top20% → Risk Top10%로 50가구를 먼저 좁힌 뒤 과거 프로모션 반응을 결합. 반복 반응 관측의 현재 쿠폰 사용률 40.8%, 최종 50가구를 반응 근거에 따라 4개 CRM 접근 검토 방향으로 분리 | [README](projects/04_retail_crm_campaign_coupon_deepdive/) · [PDF](projects/04_retail_crm_campaign_coupon_deepdive/outputs/retail_crm_campaign_coupon_deepdive.pdf) |
 | 3 | [Retail CRM Priority Design](projects/03_retail_crm_priority/) | 2026.07 ~ 2026.08 | 모든 고객을 동일하게 관리하기 어렵다면, 구매기여가 큰 고객 중 누구부터 확인할 것인가? | 구매기여 상위 20% 안에서 위험 상위 10%를 주간 우선점검 대상으로 설계. Test 91~98주 합산 기준 가치고객 미구매 65/86건(75.6%)을 Priority에서 포착 | [README](projects/03_retail_crm_priority/) · [PDF](projects/03_retail_crm_priority/outputs/retail_crm_priority.pdf) |
 | 2 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 2026.05 ~ 2026.06 | 청년 고용 문제를 취업 여부가 아니라 취업 이후 노동의 질로 보면 무엇이 달라지는가? | 청년 노동의 질 3.23 → 3.13, 청년 취업자의 33.17%를 취약 노동유형으로 식별 | [README](projects/02_youth_quality_of_work/) · [PDF](projects/02_youth_quality_of_work/outputs/youth_quality_of_work_portfolio.pdf) |
 | 1 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 2026.01 ~ 2026.02 | 소비 시간대 구조의 변화가 다음 분기 위험 상권·업종을 미리 구분하는 신호가 될 수 있는가? | 전이 집단 위험률 47.9%, 유지 집단 26.8%로 약 1.8배 높게 관찰 | [README](projects/01_consumer_pattern_transition/) · [PDF](projects/01_consumer_pattern_transition/outputs/consumer_pattern_transition_portfolio.pdf) |
@@ -90,7 +90,7 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 **범위**  
 이 결과는 Campaign 또는 Coupon의 인과효과를 증명한 것이 아닙니다. 관찰된 과거 반응과 현재 행동의 연관성을 CRM 의사결정 근거로 구조화했으며, 실제 Incremental Effect는 향후 무작위 A/B Test 또는 Holdout으로 검증해야 합니다.
 
-→ [Project README](projects/04_retail_crm_campaign_coupon_deepdive/) · [Portfolio PDF](projects/04_retail_crm_campaign_coupon_deepdive/outputs/retail_crm_campaign_coupon_deepdive_portfolio.pdf)
+→ [Project README](projects/04_retail_crm_campaign_coupon_deepdive/) · [Portfolio PDF](projects/04_retail_crm_campaign_coupon_deepdive/outputs/retail_crm_campaign_coupon_deepdive.pdf)
 
 ---
 
