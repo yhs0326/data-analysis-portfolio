@@ -34,7 +34,6 @@
 | 2 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 2026.05 ~ 2026.06 | 청년 고용 문제를 취업 여부가 아니라 취업 이후 노동의 질로 보면 무엇이 달라지는가? | 청년 노동의 질 3.23 → 3.13, 청년 취업자의 33.17%를 취약 노동유형으로 식별 | [README](projects/02_youth_quality_of_work/) · [PDF](projects/02_youth_quality_of_work/outputs/youth_quality_of_work_portfolio.pdf) |
 | 1 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 2026.01 ~ 2026.02 | 소비 시간대 구조의 변화가 다음 분기 위험 상권·업종을 미리 구분하는 신호가 될 수 있는가? | 전이 집단 위험률 47.9%, 유지 집단 26.8%로 약 1.8배 높게 관찰 | [README](projects/01_consumer_pattern_transition/) · [PDF](projects/01_consumer_pattern_transition/outputs/consumer_pattern_transition_portfolio.pdf) |
 
-> Retail CRM 프로젝트의 `65/86`은 91~98주 **가구×기준주차 기록을 합산한 Backtest 결과**이며, 서로 겹치는 미래 4주 구간을 8개의 독립 실험으로 해석하지 않습니다.
 
 ---
 
