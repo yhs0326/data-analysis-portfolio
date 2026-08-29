@@ -2,9 +2,26 @@
 
 `Retail CRM Priority - Campaign & Coupon Deep Dive`
 
+> **03 Retail CRM Priority Design의 Extension 프로젝트**입니다. 03이 **“누구를 먼저 확인할 것인가?”**를 다뤘다면, 04는 **“그 고객에게 어떤 CRM 접근을 검토할 것인가?”**로 질문을 확장했습니다.
+>
 > **핵심 질문:** 먼저 확인할 고객은 찾았다. 그렇다면 **그 고객에게 어떤 CRM 접근을 검토할 근거가 있는가?**
 >
 > **핵심 결론:** 기존 CRM Priority의 구매가치 상위 20% → 미구매 위험 상위 10% 기준으로 50가구를 먼저 좁힌 뒤, 과거 프로모션 반응을 별도의 판단 축으로 추가했습니다. 과거 캠페인에서 반복적으로 쿠폰을 사용한 관측의 현재 반응률은 **40.8%**, 1회 반응은 **23.8%**, 노출 후 미상환은 **7.4%**로 나타났습니다. 이를 최종 50가구에 연결했을 때 **5가구는 쿠폰·프로모션 우선 검토, 10가구는 쿠폰 테스트 검토, 3가구는 반응정보 탐색, 32가구는 대체 CRM 접근 검토**로 구분했습니다.
+
+![03의 고객 선별을 CRM 실행 설계로 확장](../../assets/images/04_campaign_coupon_extension.jpg)
+
+### 핵심 용어
+
+현재 Campaign 시작 전에 알 수 있었던 과거 이력만 사용해 고객×Campaign 관측을 다음 4개 상태로 구분했습니다.
+
+- **`NO_HISTORY`**: 과거 완료 Campaign 수신 이력이 없음
+- **`EXPOSED_NO_REDEMPTION`**: 과거 Campaign 노출은 있었지만 Coupon 상환이 관찰되지 않음
+- **`ONE_TIME_REDEEMER`**: 과거 서로 다른 1개 Campaign에서 Coupon 사용
+- **`REPEAT_REDEEMER`**: 과거 서로 다른 2개 이상 Campaign에서 Coupon 사용
+
+> 위 인포그래픽의 `이력 부족 / 지속 무반응 / 간헐 반응 / 반복 반응`은 빠른 이해를 위한 요약 표현입니다. 실제 분석과 집계에는 위의 기술적 상태 정의를 사용했습니다.
+
+→ [03. Retail CRM Priority Design으로 돌아가기](../03_retail_crm_priority/)
 
 ---
 
@@ -300,10 +317,16 @@ EXPOSED_NO_REDEMPTION → 대체 CRM 접근 검토
 ├── sql/
 │   └── retail_campaign_coupon_analysis.sql
 ├── python/
-│   └── retail_campaign_coupon_analysis.py
+│   ├── retail_campaign_coupon_analysis.py
+│   └── retail_campaign_coupon_profile.py
 └── outputs/
-    ├── retail_crm_campaign_coupon_deepdive_portfolio.pdf
-    └── retail_crm_campaign_coupon_deepdive_portfolio.pptx
+    ├── 01_campaign_type_response.csv
+    ├── 02_historical_response_rate.csv
+    ├── 03_pre_during_post_sales.csv
+    ├── 04_crm_actionability_summary.csv
+    ├── 05_crm_sensitivity_summary.csv
+    ├── 06_crm_actionability_customers.csv
+    └── retail_crm_campaign_coupon_deepdive.pdf
 ```
 
 ### 파일 역할
@@ -311,14 +334,14 @@ EXPOSED_NO_REDEMPTION → 대체 CRM 접근 검토
 - `sql/retail_campaign_coupon_analysis.sql`  
   Campaign/Coupon 품질검증, 가구×Campaign Mart, Historical Response, CRM Priority 결합 및 최종 대사를 포함합니다.
 
+- `python/retail_campaign_coupon_profile.py`  
+  Campaign/Coupon 원본 파일의 구조·결측·중복·키 관계를 프로파일링합니다.
+
 - `python/retail_campaign_coupon_analysis.py`  
   Campaign 반응률, PRE/DURING/POST, Historical Response, Risk 민감도 및 최종 시각화를 포함합니다.
 
-- `outputs/retail_crm_campaign_coupon_deepdive_portfolio.pdf`  
+- [`outputs/retail_crm_campaign_coupon_deepdive.pdf`](outputs/retail_crm_campaign_coupon_deepdive.pdf)  
   채용·포트폴리오 검토용 최종 요약 자료입니다.
-
-- `outputs/retail_crm_campaign_coupon_deepdive_portfolio.pptx`  
-  편집 가능한 발표자료입니다.
 
 ---
 
