@@ -117,18 +117,43 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 
 ## Repository Structure
 
-현재 `portfolio-revision` 브랜치의 최상위 구조입니다.
-
 ```text
 data-analysis-portfolio/
-├── .gitignore
 ├── README.md
+├── assets/
+│   └── images/
+│
+├── projects/
+│   ├── 01_consumer_pattern_transition/
+│   │   ├── README.md
+│   │   ├── python/
+│   │   ├── r/
+│   │   ├── sql/
+│   │   ├── outputs/
+│   │   └── data/
+│   │
+│   ├── 02_youth_quality_of_work/
+│   │   ├── README.md
+│   │   ├── data/
+│   │   ├── outputs/
+│   │   ├── python/
+│   │   ├── r/
+│   │   └── sql/
+│   │
+│   ├── 03_retail_crm_priority/
+│   │   ├── README.md
+│   │   ├── python/
+│   │   ├── sql/
+│   │   └── outputs/
+│   │
+│   └── 04_retail_crm_campaign_coupon_deepdive/
+│       ├── README.md
+│       ├── python/
+│       ├── sql/
+│       └── outputs/
+│
 ├── requirements.txt
-└── projects/
-    ├── 01_consumer_pattern_transition/
-    ├── 02_youth_quality_of_work/
-    ├── 03_retail_crm_priority/
-    └── 04_retail_crm_campaign_coupon_deepdive/
+└── .gitignore
 ```
 
 각 프로젝트 폴더의 실제 세부 구조와 파일 역할은 해당 프로젝트 README에 정리했습니다.
