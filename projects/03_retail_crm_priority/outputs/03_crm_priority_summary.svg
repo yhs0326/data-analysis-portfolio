@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+  <defs>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#51439b"/>
+      <stop offset="1" stop-color="#7568bd"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif;fill:#111827}
+      .p{fill:#6258a8}
+      .box{fill:#ffffff;stroke:#7568bd;stroke-width:2}
+      .soft{fill:#f7f6fc;stroke:#d7d3ee;stroke-width:1.5}
+      .small{font-size:20px}
+      .mid{font-size:27px;font-weight:700}
+      .big{font-size:36px;font-weight:800}
+      .title{font-size:48px;font-weight:800}
+    </style>
+  </defs>
+  <rect width="1200" height="850" fill="#ffffff"/>
+  <text x="600" y="60" text-anchor="middle" class="t title"><tspan class="p">03</tspan><tspan dx="18">Retail CRM Priority Design</tspan></text>
+  <rect x="560" y="82" width="80" height="4" rx="2" fill="#6258a8"/>
+  <text x="600" y="125" text-anchor="middle" class="t" font-size="26">구매기여가 큰 고객군 안에서 미구매 위험을 반복 검증</text>
+
+  <rect x="40" y="240" width="265" height="350" rx="16" class="soft"/>
+  <path d="M40 256a16 16 0 0 1 16-16h233a16 16 0 0 1 16 16v60H40z" fill="url(#purple)"/>
+  <text x="172" y="288" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="26" font-weight="800">91~98주 반복 적용</text>
+  <line x1="65" y1="405" x2="280" y2="405" stroke="#d7d3ee" stroke-dasharray="5 5"/>
+  <line x1="65" y1="505" x2="280" y2="505" stroke="#d7d3ee" stroke-dasharray="5 5"/>
+  <text x="78" y="355" class="t small">가치고객 전체 미구매율</text>
+  <text x="78" y="390" class="t big p">1.8~2.6%</text>
+  <text x="78" y="455" class="t small">Priority 미구매율</text>
+  <text x="78" y="490" class="t big p">14~18%</text>
+  <text x="78" y="555" class="t small">8주 합산 Lift</text>
+  <text x="78" y="585" class="t big p">7.56배</text>
+
+  <rect x="380" y="180" width="440" height="110" rx="16" class="box"/>
+  <circle cx="420" cy="235" r="22" fill="#6258a8"/>
+  <text x="420" y="243" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="22" font-weight="800">1</text>
+  <text x="610" y="247" text-anchor="middle" class="t big">전체 2,500가구</text>
+
+  <path d="M560 290l25 35h30l25-35z" fill="#e4e1f4"/>
+  <rect x="380" y="330" width="440" height="130" rx="16" class="box"/>
+  <circle cx="420" cy="395" r="22" fill="#6258a8"/>
+  <text x="420" y="403" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="22" font-weight="800">2</text>
+  <text x="610" y="382" text-anchor="middle" class="t mid">가치고객</text>
+  <text x="610" y="415" text-anchor="middle" class="t small">최근 26주 구매금액 상위 20%</text>
+  <text x="610" y="448" text-anchor="middle" class="t big p">500가구</text>
+
+  <path d="M560 460l25 35h30l25-35z" fill="#e4e1f4"/>
+  <rect x="380" y="500" width="440" height="115" rx="16" class="box"/>
+  <circle cx="420" cy="557" r="22" fill="#6258a8"/>
+  <text x="420" y="565" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="22" font-weight="800">3</text>
+  <text x="610" y="548" text-anchor="middle" class="t mid">위험선별</text>
+  <text x="610" y="582" text-anchor="middle" class="t small">다음 4주 미구매 위험 상위 10%</text>
+
+  <path d="M560 615l25 35h30l25-35z" fill="#e4e1f4"/>
+  <rect x="380" y="655" width="440" height="105" rx="16" fill="url(#purple)"/>
+  <circle cx="420" cy="708" r="22" fill="#fff"/>
+  <text x="420" y="716" text-anchor="middle" class="t" font-size="22" font-weight="800">4</text>
+  <text x="610" y="700" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="30" font-weight="800">우선점검 대상</text>
+  <text x="610" y="742" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="38" font-weight="800">50가구</text>
+
+  <rect x="895" y="240" width="265" height="350" rx="16" class="soft"/>
+  <path d="M895 256a16 16 0 0 1 16-16h233a16 16 0 0 1 16 16v60H895z" fill="url(#purple)"/>
+  <text x="1027" y="288" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="26" font-weight="800">8주 합산 결과</text>
+  <line x1="920" y1="405" x2="1135" y2="405" stroke="#d7d3ee" stroke-dasharray="5 5"/>
+  <line x1="920" y1="505" x2="1135" y2="505" stroke="#d7d3ee" stroke-dasharray="5 5"/>
+  <text x="935" y="355" class="t small">가치고객 미구매</text>
+  <text x="935" y="390" class="t big p">86건</text>
+  <text x="935" y="455" class="t small">Priority에서</text>
+  <text x="935" y="490" class="t big p">65건 포착</text>
+  <text x="935" y="555" class="t small">포착률</text>
+  <text x="935" y="585" class="t big p">75.6%</text>
+
+  <rect x="120" y="790" width="960" height="45" rx="12" fill="#faf9fe" stroke="#6258a8" stroke-width="2"/>
+  <text x="600" y="820" text-anchor="middle" class="t" font-size="23" font-weight="700">한 번의 우연한 결과가 아니라, 연속된 기준시점에서도 같은 방향의 선별효과가 유지되었다.</text>
+</svg>
