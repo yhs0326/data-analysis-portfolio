@@ -8,8 +8,6 @@
 >
 > **핵심 결론:** 기존 CRM Priority의 구매가치 상위 20% → 미구매 위험 상위 10% 기준으로 50가구를 먼저 좁힌 뒤, 과거 프로모션 반응을 별도의 판단 축으로 추가했습니다. 과거 캠페인에서 반복적으로 쿠폰을 사용한 관측의 현재 반응률은 **40.8%**, 1회 반응은 **23.8%**, 노출 후 미상환은 **7.4%**로 나타났습니다. 이를 최종 50가구에 연결했을 때 **5가구는 쿠폰·프로모션 우선 검토, 10가구는 쿠폰 테스트 검토, 3가구는 반응정보 탐색, 32가구는 대체 CRM 접근 검토**로 구분했습니다.
 
-![03의 고객 선별을 CRM 실행 설계로 확장](../../assets/images/04_campaign_coupon_extension.jpg)
-
 ### 핵심 용어
 
 현재 Campaign 시작 전에 알 수 있었던 과거 이력만 사용해 고객×Campaign 관측을 다음 4개 상태로 구분했습니다.
@@ -18,8 +16,6 @@
 - **`EXPOSED_NO_REDEMPTION`**: 과거 Campaign 노출은 있었지만 Coupon 상환이 관찰되지 않음
 - **`ONE_TIME_REDEEMER`**: 과거 서로 다른 1개 Campaign에서 Coupon 사용
 - **`REPEAT_REDEEMER`**: 과거 서로 다른 2개 이상 Campaign에서 Coupon 사용
-
-> 위 인포그래픽의 `이력 부족 / 지속 무반응 / 간헐 반응 / 반복 반응`은 빠른 이해를 위한 요약 표현입니다. 실제 분석과 집계에는 위의 기술적 상태 정의를 사용했습니다.
 
 → [03. Retail CRM Priority Design으로 돌아가기](../03_retail_crm_priority/)
 
@@ -291,7 +287,7 @@ EXPOSED_NO_REDEMPTION → 대체 CRM 접근 검토
 
 ---
 
-## 11. 한계와 다음 단계
+## 11. 한계와 다음 검증
 
 ### 한계
 
@@ -301,29 +297,56 @@ EXPOSED_NO_REDEMPTION → 대체 CRM 접근 검토
 - POST는 4주까지만 관찰해 장기 유지 여부를 판단할 수 없습니다.
 - 관찰자료이므로 Campaign 또는 Coupon의 인과효과를 주장하지 않습니다.
 
-### 다음 단계
+### 다음 검증: CRM A/B Test 설계안
 
-실제 운영에서는 고객군별 CRM 전략을 설계한 뒤 **무작위 A/B Test 또는 미발송 Holdout**을 두어 Incremental Effect를 검증해야 합니다.
+현재 분석은 **누구에게 어떤 접근을 검토할 근거가 있는지**를 구조화한 단계입니다. 실제 쿠폰·CRM 접근의 순증 효과는 무작위 실험으로 확인해야 합니다.
 
-이번 프로젝트의 역할은 실험 전 단계에서 **누구에게 어떤 접근을 검토할 근거가 있는지 구조화하는 것**입니다.
+| 항목 | 설계안 |
+|---|---|
+| 실험 단위 | `HOUSEHOLD_KEY` |
+| 대상 | 03에서 산출한 CRM Priority 후보군 |
+| 층화 | Historical Response 상태별로 구분한 뒤 각 상태 안에서 무작위 배정 |
+| Treatment | 해당 상태에서 검토한 CRM 접근 적용 |
+| Control | 미발송 Holdout 또는 기존 운영정책 유지 |
+| 주 평가기간 | 03의 예측기간과 맞춘 **4주** |
+| 원칙 | 배정된 집단 기준으로 비교하는 ITT(Intention-to-Treat) 방식 |
+
+#### 핵심 효과 지표
+
+1. **Incremental Purchase Rate**  
+   `Treatment 4주 구매율 - Control 4주 구매율`
+
+2. **Incremental Revenue per Household**  
+   `Treatment 고객당 4주 매출 - Control 고객당 4주 매출`
+
+보조지표로 주문수, 쿠폰 상환율을 확인할 수 있습니다. 캠페인 비용이나 마진 데이터가 확보되면 순증 이익과 ROI까지 확장합니다.
+
+### 표본 크기와 반복 노출 주의
+
+한 시점의 Priority 50가구만으로는 상태별 표본이 작을 수 있으므로 실제 실험 전 **Power Analysis로 필요한 표본 수를 계산**해야 합니다. 표본 확보가 필요하면 사전에 고정한 Priority 규칙을 여러 주차에 반복 적용하되, 동일 고객의 반복 노출과 Treatment/Control 재배정을 관리해야 합니다.
+
+즉 이 프로젝트의 관찰 결과를 바로 `쿠폰이 효과가 있다`고 해석하지 않고, **관찰 분석 → 타깃·접근 가설 → 무작위 실험 → 순증 효과 측정**으로 이어지는 다음 검증 단계를 명시합니다.
 
 ---
 
-## 12. 파일 구성
+## 12. Repository Structure
+
+현재 `portfolio-revision` 브랜치의 실제 파일 기준입니다. 아래에서는 빈 폴더 유지를 위한 `.gitkeep`은 생략했습니다.
 
 ```text
 04_retail_crm_campaign_coupon_deepdive/
 ├── README.md
-├── sql/
-│   └── retail_campaign_coupon_analysis.sql
 ├── python/
 │   ├── retail_campaign_coupon_analysis.py
 │   └── retail_campaign_coupon_profile.py
+├── sql/
+│   └── retail_campaign_coupon_analysis.sql
 └── outputs/
     ├── 01_campaign_type_response.csv
     ├── 02_historical_response_rate.csv
     ├── 03_pre_during_post_sales.csv
     ├── 04_crm_actionability_summary.csv
+    ├── 04_campaign_coupon_extension.jpg
     ├── 05_crm_sensitivity_summary.csv
     ├── 06_crm_actionability_customers.csv
     └── retail_crm_campaign_coupon_deepdive.pdf
@@ -353,4 +376,4 @@ EXPOSED_NO_REDEMPTION → 대체 CRM 접근 검토
 
 따라서 최종 메시지는 다음과 같습니다.
 
-> **구매가치와 미구매 위험으로 먼저 관리할 고객을 좁히고, 과거 프로모션 실제 반응을 이용해 그 고객에게 어떤 CRM 접근을 검토할지 연결했습니다. 분석 결과는 자동 발송 규칙이 아니라 CRM 담당자의 우선검토 근거로 사용합니다.**
+> **구매가치와 미구매 위험으로 먼저 관리할 고객을 좁히고, 과거 프로모션 실제 반응을 이용해 그 고객에게 어떤 CRM 접근을 검토할지 연결했습니다. 분석 결과는 자동 발송 규칙이 아니라 CRM 담당자의 우선검토 근거로 사용하며, 실제 효과는 A/B Test 또는 Holdout으로 검증해야 합니다.**
