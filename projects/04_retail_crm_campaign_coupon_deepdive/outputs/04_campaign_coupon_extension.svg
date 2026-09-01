@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+  <defs>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#51439b"/>
+      <stop offset="1" stop-color="#7568bd"/>
+    </linearGradient>
+    <style>
+      .t{font-family:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',Arial,sans-serif;fill:#111827}
+      .p{fill:#6258a8}
+      .box{fill:#ffffff;stroke:#7568bd;stroke-width:2}
+      .soft{fill:#f7f6fc;stroke:#d7d3ee;stroke-width:1.5}
+      .small{font-size:20px}
+      .mid{font-size:27px;font-weight:700}
+      .big{font-size:34px;font-weight:800}
+      .title{font-size:46px;font-weight:800}
+    </style>
+  </defs>
+  <rect width="1200" height="850" fill="#ffffff"/>
+  <text x="600" y="58" text-anchor="middle" class="t title">04 Campaign &amp; Coupon Deep Dive</text>
+  <text x="600" y="105" text-anchor="middle" class="t p" font-size="28" font-weight="700">03의 고객 선별을 CRM 실행 설계로 확장</text>
+
+  <rect x="45" y="160" width="420" height="520" rx="18" class="box"/>
+  <path d="M45 178a18 18 0 0 1 18-18h384a18 18 0 0 1 18 18v62H45z" fill="url(#purple)"/>
+  <text x="255" y="205" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="28" font-weight="800">03에서 한 일</text>
+
+  <path d="M115 290h280l-35 85H150z" fill="#f1eff9" stroke="#d7d3ee"/>
+  <text x="255" y="340" text-anchor="middle" class="t mid">전체 고객</text>
+  <path d="M245 375v32" stroke="#6258a8" stroke-width="4"/>
+  <path d="M235 399l10 12 10-12" fill="none" stroke="#6258a8" stroke-width="4"/>
+  <path d="M145 415h220l-30 85H175z" fill="#f1eff9" stroke="#d7d3ee"/>
+  <text x="255" y="465" text-anchor="middle" class="t mid">가치고객</text>
+  <path d="M245 500v30" stroke="#6258a8" stroke-width="4"/>
+  <path d="M235 522l10 12 10-12" fill="none" stroke="#6258a8" stroke-width="4"/>
+  <path d="M175 540h160l-22 85H197z" fill="#ece9f7" stroke="#d7d3ee"/>
+  <text x="255" y="590" text-anchor="middle" class="t mid">Priority 50가구</text>
+  <line x1="80" y1="645" x2="430" y2="645" stroke="#c8c3e6" stroke-dasharray="6 6"/>
+  <text x="255" y="670" text-anchor="middle" class="t p" font-size="24" font-weight="700">누구를 먼저 볼까?</text>
+
+  <path d="M500 385h125v-45l100 80-100 80v-45H500z" fill="url(#purple)"/>
+  <text x="612" y="407" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="20" font-weight="700">Historical</text>
+  <text x="612" y="434" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="20" font-weight="700">Response 분석</text>
+
+  <rect x="735" y="160" width="420" height="520" rx="18" class="box"/>
+  <path d="M735 178a18 18 0 0 1 18-18h384a18 18 0 0 1 18 18v62H735z" fill="url(#purple)"/>
+  <text x="945" y="205" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="28" font-weight="800">04에서 확장한 일</text>
+
+  <rect x="770" y="285" width="160" height="130" rx="14" class="soft"/>
+  <text x="850" y="330" text-anchor="middle" class="t mid">반복 반응 고객</text>
+  <text x="850" y="365" text-anchor="middle" class="t small">쿠폰/프로모션 우선</text>
+
+  <rect x="960" y="285" width="160" height="130" rx="14" class="soft"/>
+  <text x="1040" y="330" text-anchor="middle" class="t mid">간헐 반응 고객</text>
+  <text x="1040" y="365" text-anchor="middle" class="t small">테스트 후 확대 여부 검토</text>
+
+  <rect x="770" y="440" width="160" height="130" rx="14" class="soft"/>
+  <text x="850" y="485" text-anchor="middle" class="t mid">이력 부족 고객</text>
+  <text x="850" y="520" text-anchor="middle" class="t small">탐색 캠페인</text>
+
+  <rect x="960" y="440" width="160" height="130" rx="14" class="soft"/>
+  <text x="1040" y="485" text-anchor="middle" class="t mid">지속 무반응 고객</text>
+  <text x="1040" y="520" text-anchor="middle" class="t small">대체 CRM 접근</text>
+
+  <line x1="770" y1="620" x2="1120" y2="620" stroke="#c8c3e6" stroke-dasharray="6 6"/>
+  <text x="945" y="652" text-anchor="middle" class="t p" font-size="24" font-weight="700">어떻게 접근할까?</text>
+
+  <rect x="85" y="720" width="1030" height="90" rx="16" fill="#faf9fe" stroke="#6258a8" stroke-width="2"/>
+  <text x="600" y="758" text-anchor="middle" class="t" font-size="25" font-weight="800">고객 선별(03)에서 끝나지 않고,</text>
+  <text x="600" y="792" text-anchor="middle" class="t" font-size="25" font-weight="800">실제 실행 가능한 <tspan class="p">CRM 액션 방향(04)</tspan>까지 연결했다.</text>
+</svg>
