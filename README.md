@@ -30,10 +30,10 @@
 
 | No. | Project | Period | Business Question | Key Decision / Result | Portfolio |
 |---|---|---|---|---|---|
-| 04 | [Campaign & Coupon Deep Dive](projects/04_retail_crm_campaign_coupon_deepdive/) **— 03 Extension** | 2026.08 | 먼저 확인할 고객은 찾았다. 그렇다면 그 고객에게 어떤 CRM 접근을 검토할 근거가 있는가? | 과거 프로모션 반응을 별도 판단 축으로 추가. 최종 50가구를 **5 / 10 / 3 / 32가구**의 CRM 접근 검토 방향으로 분리 | [README](projects/04_retail_crm_campaign_coupon_deepdive/) · [PDF](projects/04_retail_crm_campaign_coupon_deepdive/outputs/retail_crm_campaign_coupon_deepdive.pdf) |
+| 04 | [Campaign & Coupon Deep Dive](projects/04_retail_crm_campaign_coupon_deepdive/) **— 03 Extension** | 2026.08 | 먼저 확인할 고객은 찾았다. 그렇다면 그 고객에게 어떤 CRM 접근을 검토할 근거가 있는가? | 과거 프로모션 반응을 별도 판단 축으로 추가. 최종 50가구를 **쿠폰·프로모션 우선 검토 5가구 / 쿠폰 테스트 10가구 / 반응정보 탐색 3가구 / 대체 CRM 접근 32가구**로 구분 | [README](projects/04_retail_crm_campaign_coupon_deepdive/) · [PDF](projects/04_retail_crm_campaign_coupon_deepdive/outputs/retail_crm_campaign_coupon_deepdive.pdf) |
 | 03 | [Retail CRM Priority Design](projects/03_retail_crm_priority/) **— Main CRM Project** | 2026.07 ~ 2026.08 | 구매기여가 큰 고객 중 누구부터 확인할 것인가? | 최근 26주 구매금액 상위 20% 안에서 미구매 위험 상위 10%를 선별. 91~98주 합산 **86건 중 65건(75.6%)** 포착, 가치고객 대비 **Lift 7.56배** | [README](projects/03_retail_crm_priority/) · [PDF](projects/03_retail_crm_priority/outputs/retail_crm_priority.pdf) |
-| 02 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 2026.05 ~ 2026.06 | 청년 고용 문제를 취업 여부가 아니라 취업 이후 노동의 질로 보면 무엇이 달라지는가? | 청년 노동의 질 **3.23 → 3.13**, 청년 취업자의 **33.17%**를 취약 노동유형으로 식별 | [README](projects/02_youth_quality_of_work/) · [PDF](projects/02_youth_quality_of_work/outputs/youth_quality_of_work_portfolio.pdf) |
-| 01 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 2026.01 ~ 2026.02 | 소비 시간대 구조 변화가 다음 분기 변화를 미리 구분하는 신호가 될 수 있는가? | 소비패턴 전이 집단의 **다음 분기 피크시간 변화율 47.9%**, 유지집단 **26.8%** — 약 1.8배 | [README](projects/01_consumer_pattern_transition/) · [PDF](projects/01_consumer_pattern_transition/outputs/consumer_pattern_transition_portfolio.pdf) |
+| 02 | [Youth Quality of Work Analysis](projects/02_youth_quality_of_work/) | 2026.05 ~ 2026.06 | 청년 고용 문제를 취업 여부가 아니라 취업 이후 노동의 질로 보면 무엇이 달라지는가? | 청년 노동의 질 **3.23 → 3.13**, 청년 취업자의 **33.17%**를 취약 노동유형으로 식별. 고용안정·재취업 가능성 중심의 정책 모니터링 방향 제안 | [README](projects/02_youth_quality_of_work/) · [PDF](projects/02_youth_quality_of_work/outputs/youth_quality_of_work_portfolio.pdf) |
+| 01 | [Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 2026.01 ~ 2026.02 | 소비 시간대 구조 변화가 다음 분기 변화를 미리 구분하는 신호가 될 수 있는가? | 소비패턴 전이 집단의 **다음 분기 피크시간 변화율 47.9%**, 유지집단 **26.8%** — 약 1.8배. 전이 발생 상권·업종을 조기경보 Watchlist로 활용하는 시나리오 제안 | [README](projects/01_consumer_pattern_transition/) · [PDF](projects/01_consumer_pattern_transition/outputs/consumer_pattern_transition_portfolio.pdf) |
 
 ---
 
@@ -51,14 +51,6 @@
                 ↓
 04. Campaign & Coupon Deep Dive
     03의 고객 선별을 "그 고객에게 어떻게 접근할 것인가"로 확장
-```
-
-03과 04에서는 같은 Retail/CRM 문제를 단계적으로 확장했습니다.
-
-```text
-03  누구를 먼저 볼까?
-            ↓
-04  그 고객에게 어떤 접근을 검토할까?
 ```
 
 ---
@@ -94,17 +86,21 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 
 91~98주에 같은 기준을 반복 적용했을 때 가치고객 미구매 **86건 중 65건(75.6%)**을 Priority에서 포착했고, Priority 미구매율은 **16.25%**로 가치고객 전체 **2.15%** 대비 **7.56배**였습니다.
 
+![03 CRM Priority 운영 규칙과 반복 검증](projects/03_retail_crm_priority/outputs/03_crm_priority_summary.jpg)
+
 → [03 Project README](projects/03_retail_crm_priority/) · [Portfolio PDF](projects/03_retail_crm_priority/outputs/retail_crm_priority.pdf)
 
 ### 04. Campaign & Coupon Deep Dive — 그 고객에게 어떻게 접근할 것인가?
 
 03에서 `누구부터 확인할지`를 정한 뒤, 04에서는 **현재 Campaign 시작 전에 알 수 있었던 과거 프로모션 반응**을 별도 판단 축으로 추가했습니다.
 
-과거 반복 반응 관측의 현재 쿠폰 사용률은 **40.8%**, 1회 반응은 **23.8%**, 노출 후 미상환은 **7.4%**였습니다. 이를 CRM Priority 50가구에 연결해 **쿠폰·프로모션 우선 검토 5 / 쿠폰 테스트 10 / 반응정보 탐색 3 / 대체 CRM 접근 32가구**로 구분했습니다.
+과거 반복 반응 관측의 현재 쿠폰 사용률은 **40.8%**, 1회 반응은 **23.8%**, 노출 후 미상환은 **7.4%**였습니다. 이를 CRM Priority 50가구에 연결해 **쿠폰·프로모션 우선 검토 5가구 / 쿠폰 테스트 10가구 / 반응정보 탐색 3가구 / 대체 CRM 접근 32가구**로 구분했습니다.
 
 또한 Coupon Redemption **2,318건**을 Coupon-Product Bridge와 직접 JOIN하면 약 **947.65배**로 행이 증폭되는 구조를 확인해, 반응률과 상환 횟수는 JOIN 이후 `COUNT(*)`로 계산하지 않도록 분석 단위를 분리했습니다.
 
-이 결과는 캠페인의 인과효과가 아니라 **CRM 담당자의 다음 접근을 검토하기 위한 근거**이며, 실제 Incremental Effect는 A/B Test 또는 Holdout으로 검증해야 합니다.
+![04 고객 선별에서 CRM 실행 설계로 확장](projects/04_retail_crm_campaign_coupon_deepdive/outputs/04_campaign_coupon_extension.jpg)
+
+**다음 검증:** 현재 결과는 관찰자료 기반의 CRM 검토 근거입니다. 실제 운영에서는 상태별로 Treatment / Holdout을 무작위 배정하고 **4주 구매율의 순증(Incremental Purchase Rate)**과 **고객당 순증 매출(Incremental Revenue per Household)**을 비교하는 A/B Test로 효과를 검증해야 합니다.
 
 → [04 Project README](projects/04_retail_crm_campaign_coupon_deepdive/) · [Portfolio PDF](projects/04_retail_crm_campaign_coupon_deepdive/outputs/retail_crm_campaign_coupon_deepdive.pdf)
 
@@ -112,29 +108,30 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 
 ## Supporting Projects
 
-| Project | What it demonstrates | Key Result |
+| Project | What it demonstrates | Key Result / Use Case |
 |---|---|---|
-| [01. Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 시간대 소비구조 유형화, 전이 탐지, 코호트, Walk-forward 검증 | 전이 집단 다음 분기 피크시간 변화율 **47.9%** vs 유지집단 **26.8%** |
-| [02. Youth Quality of Work](projects/02_youth_quality_of_work/) | 지표 설계, KMeans, OLS(HC3), Logistic, 비모수 검정 | 청년 노동의 질 **3.23 → 3.13**, 취약 노동유형 **33.17%** |
+| [01. Consumer Pattern Transition](projects/01_consumer_pattern_transition/) | 시간대 소비구조 유형화, 전이 탐지, 코호트, Walk-forward 검증 | 전이 집단 다음 분기 피크시간 변화율 **47.9%** vs 유지집단 **26.8%**. 전이 발생 상권·업종을 우선 모니터링하는 조기경보 신호로 활용 |
+| [02. Youth Quality of Work](projects/02_youth_quality_of_work/) | 지표 설계, KMeans, OLS(HC3), Logistic, 비모수 검정 | 청년 노동의 질 **3.23 → 3.13**, 취약 노동유형 **33.17%**. 고용안정성·재취업 가능성을 중심으로 취약집단 모니터링 및 지원 방향 검토 |
 
 ---
 
 ## Repository Structure
 
+현재 `portfolio-revision` 브랜치의 최상위 구조입니다.
+
 ```text
 data-analysis-portfolio/
+├── .gitignore
 ├── README.md
-├── assets/images/
-├── projects/
-│   ├── 01_consumer_pattern_transition/
-│   ├── 02_youth_quality_of_work/
-│   ├── 03_retail_crm_priority/
-│   └── 04_retail_crm_campaign_coupon_deepdive/
 ├── requirements.txt
-└── .gitignore
+└── projects/
+    ├── 01_consumer_pattern_transition/
+    ├── 02_youth_quality_of_work/
+    ├── 03_retail_crm_priority/
+    └── 04_retail_crm_campaign_coupon_deepdive/
 ```
 
-각 프로젝트 폴더에는 상세 README와 분석 코드·쿼리·결과물이 정리되어 있습니다.
+각 프로젝트 폴더의 실제 세부 구조와 파일 역할은 해당 프로젝트 README에 정리했습니다.
 
 ---
 
@@ -146,4 +143,4 @@ data-analysis-portfolio/
 
 ## Note
 
-이 저장소는 분석기법의 개수를 보여주는 것보다 **문제 정의 → 데이터 검증 → 분석 → 해석 → 의사결정**의 흐름을 보여주는 것을 목표로 합니다.
+이 저장소는 분석기법의 개수를 보여주는 것보다 **문제 정의 → 데이터 검증 → 분석 → 해석 → 의사결정 → 다음 검증 계획**의 흐름을 보여주는 것을 목표로 합니다.
