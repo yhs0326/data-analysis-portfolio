@@ -6,8 +6,6 @@
 >
 > **핵심 결론:** 최근 26주 구매금액 상위 20% 고객을 먼저 정의한 뒤, 그 안에서 다음 4주 미구매 위험 상위 10%를 우선점검 대상으로 선정했습니다. Test 91~98주 합산 기준 가치고객 미구매 86건 중 65건(75.6%)이 이 Priority 집단에 포함되었습니다.
 
-![CRM Priority 운영 규칙과 반복 검증 결과](../../assets/images/03_crm_priority_summary.jpg)
-
 ### 핵심 용어
 
 - **가치고객**: 기준주차 시점 최근 26주 구매금액 상위 20% 고객 — 2,500가구 중 약 500가구
@@ -186,9 +184,9 @@ Validation에서 Logistic Regression과 XGBoost를 비교했습니다.
 
 XGBoost가 전체 PR-AUC에서는 소폭 높았지만 차이는 약 0.005였습니다.
 
-반면 실제 CRM에서 상위 고객만 확인하는 시나리오에서는 Logistic Regression이 유사하거나 소폭 우수했고, 결과를 운영 담당자에게 설명하기도 더 쉬웠습니다.
+반면 실제 CRM에서 상위 고객만 확인하는 시나리오에서는 Logistic Regression이 유사하거나 소폭 우수했고, **위험순위가 왜 높아졌는지 운영 담당자에게 설명하기도 더 쉬웠습니다.**
 
-따라서 **복잡도 대비 개선폭이 제한적이라고 판단해 Logistic Regression을 최종 모델로 고정**했습니다.
+따라서 단순히 가장 복잡한 모델을 선택하지 않고, **성능 차이의 크기·상위 타깃 선별 성능·비즈니스 설명 가능성**을 함께 고려해 Logistic Regression을 최종 모델로 고정했습니다.
 
 ---
 
@@ -337,7 +335,29 @@ CRM 우선점검 후보
 
 ---
 
-## 13. Repository Structure
+## 13. Backtest 한계와 운영 적용 전 검증 계획
+
+현재 Backtest가 확인한 것은 **CRM Priority 규칙이 미래 시점의 단기 미구매 사례를 상대적으로 잘 선별했는가**입니다. 캠페인을 발송했을 때 구매를 되돌리는 인과효과까지 증명한 것은 아닙니다.
+
+또한 91~98주는 미래 4주 평가기간이 일부 겹치고 동일 HOUSEHOLD_KEY가 여러 기준주차에 반복될 수 있으므로, 8개의 독립 실험으로 해석하지 않습니다.
+
+실제 운영 적용 전에는 다음 순서가 필요합니다.
+
+```text
+CRM Priority 후보 생성
+→ 고객별 과거 CRM 반응 확인
+→ 사전에 정한 Treatment / Holdout 무작위 배정
+→ 4주 동안 구매행동 관찰
+→ Treatment와 Holdout의 순증 차이 비교
+```
+
+03 프로젝트는 **누구를 실험 대상으로 우선 검토할지**를 정하는 단계이며, 구체적인 캠페인 접근과 A/B Test 설계는 [04. Campaign & Coupon Deep Dive](../04_retail_crm_campaign_coupon_deepdive/)에서 이어집니다.
+
+---
+
+## 14. Repository Structure
+
+현재 `portfolio-revision` 브랜치의 실제 파일 기준입니다. 아래에서는 빈 폴더 유지를 위한 `.gitkeep`은 생략했습니다.
 
 ```text
 03_retail_crm_priority/
@@ -348,23 +368,34 @@ CRM 우선점검 후보
 ├── sql/
 │   └── retail_analysis.sql
 └── outputs/
+    ├── 03_crm_priority_summary.jpg
+    ├── 06_validation_model_performance.csv
+    ├── 08_value_definition_diagnostic.csv
+    ├── 09_crm_priority_50_households.csv
+    ├── 10_crm_priority_weekly_validation.csv
     └── retail_crm_priority.pdf
 ```
 
+> 코드와 SQL은 현재 분석 당시의 전체 실행 파일을 보존한 상태입니다. 포트폴리오 검토용 단계별 분할 파일은 별도로 정리할 수 있도록 원본을 유지했습니다.
+
 ---
 
-## 14. Main Files
+## 15. Main Files
 
 | 파일 | 역할 |
 |---|---|
 | [`python/retail_ecommerce.py`](python/retail_ecommerce.py) | 원본 거래·상품 데이터 프로파일링과 분석 전 데이터 구조·품질 점검 |
 | [`python/retail_ecommerce_modeling.py`](python/retail_ecommerce_modeling.py) | 고객×주차 모델 데이터 기반 미구매 위험 모델링, Final Test, CRM Priority 시뮬레이션 및 반복 검증 |
 | [`sql/retail_analysis.sql`](sql/retail_analysis.sql) | RAW 적재·검증부터 분석용 테이블 구성까지 수행한 전체 SQL 파이프라인 |
+| [`outputs/06_validation_model_performance.csv`](outputs/06_validation_model_performance.csv) | Validation 모델 성능 비교 결과 |
+| [`outputs/08_value_definition_diagnostic.csv`](outputs/08_value_definition_diagnostic.csv) | 가치 정의 재설계를 위한 진단 결과 |
+| [`outputs/09_crm_priority_50_households.csv`](outputs/09_crm_priority_50_households.csv) | 최종 CRM Priority 50가구 목록 |
+| [`outputs/10_crm_priority_weekly_validation.csv`](outputs/10_crm_priority_weekly_validation.csv) | 91~98주 반복 적용 결과 |
 | [`outputs/retail_crm_priority.pdf`](outputs/retail_crm_priority.pdf) | 프로젝트 문제 정의, 분석 과정, 핵심 결과와 CRM 우선점검 설계를 정리한 포트폴리오 PDF |
 
 ---
 
-## 15. Tech Stack
+## 16. Tech Stack
 
 | 구분 | 사용 도구 |
 |---|---|
