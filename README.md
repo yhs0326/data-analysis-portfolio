@@ -120,8 +120,6 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 ```text
 data-analysis-portfolio/
 ├── README.md
-├── assets/
-│   └── images/
 │
 ├── projects/
 │   ├── 01_consumer_pattern_transition/
