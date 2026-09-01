@@ -86,7 +86,7 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 
 91~98주에 같은 기준을 반복 적용했을 때 가치고객 미구매 **86건 중 65건(75.6%)**을 Priority에서 포착했고, Priority 미구매율은 **16.25%**로 가치고객 전체 **2.15%** 대비 **7.56배**였습니다.
 
-![03 CRM Priority 운영 규칙과 반복 검증](projects/03_retail_crm_priority/outputs/03_crm_priority_summary.jpg)
+![03 CRM Priority 운영 규칙과 반복 검증](projects/03_retail_crm_priority/outputs/03_crm_priority_summary.svg)
 
 → [03 Project README](projects/03_retail_crm_priority/) · [Portfolio PDF](projects/03_retail_crm_priority/outputs/retail_crm_priority.pdf)
 
@@ -98,7 +98,7 @@ SQL Data Mart, 통계 분석, 고객 세분화, 예측모형을 필요에 따라
 
 또한 Coupon Redemption **2,318건**을 Coupon-Product Bridge와 직접 JOIN하면 약 **947.65배**로 행이 증폭되는 구조를 확인해, 반응률과 상환 횟수는 JOIN 이후 `COUNT(*)`로 계산하지 않도록 분석 단위를 분리했습니다.
 
-![04 고객 선별에서 CRM 실행 설계로 확장](projects/04_retail_crm_campaign_coupon_deepdive/outputs/04_campaign_coupon_extension.jpg)
+![04 고객 선별에서 CRM 실행 설계로 확장](projects/04_retail_crm_campaign_coupon_deepdive/outputs/04_campaign_coupon_extension.svg)
 
 **다음 검증:** 현재 결과는 관찰자료 기반의 CRM 검토 근거입니다. 실제 운영에서는 상태별로 Treatment / Holdout을 무작위 배정하고 **4주 구매율의 순증(Incremental Purchase Rate)**과 **고객당 순증 매출(Incremental Revenue per Household)**을 비교하는 A/B Test로 효과를 검증해야 합니다.
 
